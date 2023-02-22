@@ -1,0 +1,85 @@
+body {
+  background-color: #1e1e1e;
+  color: white;
+  font-family: system-ui;
+  height: 100vh;
+  margin: 0;
+}
+
+.accordions {
+  border: 1px solid #3e3e3e;
+  border-radius: 8px;
+  left: 24px;
+  max-width: 300px;
+  min-width: 300px;
+  overflow: hidden;
+  position: fixed;
+  top: 24px;
+  z-index: 1;
+}
+
+.accordion {
+  background-color: #1e1e1e;
+}
+
+.accordion__header {
+  align-items: center;
+  background-color: #252526;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  gap: 8px;
+  padding: 8px;
+}
+
+.accordion__header svg {
+  transition: transform 0.3s ease;
+}
+
+.accordion.open .accordion__header svg {
+  transform: rotate(180deg);
+}
+
+.accordion__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.accordion__content {
+  overflow: hidden;
+}
+
+.accordion__content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 8px 0;
+  padding: 0 16px;
+}
+
+.accordion.open .accordion__body {
+  grid-template-rows: 1fr;
+}
+
+.accordion__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+}
+
+.accordion__button {
+  background-color: #252526;
+  border: none;
+  border-radius: 8px;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 8px 16px;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.accordion__button:hover {
+  background-color: #3e3e3e;
+}
